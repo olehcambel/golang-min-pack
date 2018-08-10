@@ -2,21 +2,17 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"net/http"
 )
 
-type geek struct {
-	ign, skill string
-	id         int
-}
-
-func (y *geek) getData() {
-	fmt.Println("important news:")
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "Web Server with GOlang")
+	log.Println("/")
 }
 
 func main() {
-	cambel := geek{ign: "olehcambel", id: 57322911}
-
-	cambel.getData()
-
-	fmt.Println(cambel)
+	log.Println("Server has started!")
+	http.HandleFunc("/", handler)
+	http.ListenAndServe(":6060", nil)
 }
