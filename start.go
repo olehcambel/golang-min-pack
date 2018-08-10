@@ -9,11 +9,14 @@ type geek struct {
 	id         int
 }
 
+func (y *geek) getData() {
+	fmt.Println("important news:")
+}
+
 func main() {
 	cambel := geek{ign: "olehcambel", id: 57322911}
-	// cambel := geek{"olehcambel", "React", 57322911}
 
-	// var cambel geek
-	// cambel.ign = "olehcambel"
+	cambel.getData()
+
 	fmt.Println(cambel)
 }
