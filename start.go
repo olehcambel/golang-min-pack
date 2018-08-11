@@ -36,6 +36,6 @@ func main() {
 	go myService.receive()
 
 	log.Println("Server has started!")
-	http.HandleFunc("/", myService.handler)
+	http.HandleFunc("/api/", myService.handler)
 	http.ListenAndServe(":6060", nil)
 }
